@@ -15,7 +15,7 @@ A fully responsive clone of the BookMyShow website built using **Bootstrap 4**, 
 
 <table>
   <tr>
-    <td><img src="Images/Card1.png" width="300"/></td>
+    <td><img src="Images/Card.png" width="300"/></td>
     <td><img src="Images/Card2.png" width="300"/></td>
   </tr>
   <tr>
