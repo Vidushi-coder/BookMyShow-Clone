@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .bg-premiere {
+            background-color: #2b2f4c;
+            color: white;
+        }
+
+        .font-xs {
+            font-size: 0.75rem;
+        }
+
+        .text-border-hover:hover p {
+            color: white !important;
+        }
+
+        .bg-darkk {
+            background-color: #2f2f35;
+        }
+
+        .bg-secondaryy {
+            background-color: #3e3e42;
+        }
+
+        .text-border-hoverr:hover i {
+            color: white !important;
+        }
+
+        .scroller {
+            width: 220px;
+        }
+
+        .scroll-bar {
+            min-width: max-content;
+        }
+
+        #SignInForm {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1050;
+        }
+    </style>
+
+    <title>Book My Show</title>
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="Images/img1.png" style="width: 150px; height: auto; margin-left: 10px;"
+                    class="img-fluid" alt="Logo"></a>
+            <form class="my-2 my-lg-0 flex-grow-1 me-3">
+                <input class="form-control mr-sm-2 w-100" type="search"
+                    placeholder="Search for Movies, Events, Plays, Sports and Activities" aria-label="Search"
+                    style="max-width: 600px;">
+            </form>
+            <div class="collapse navbar-collapse d-flex align-items-center justify-content-end"
+                id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kolkata
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#"> Delhi</a>
+                            <a class="dropdown-item" href="#">Mumbai</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Any Other Country</a>
+                        </div>
+                    </li>
+                    <li>
+                        <button id="SignIn" onclick="handleSignInClick()"
+                            class="btn btn-outline-success my-2 my-sm-0 ml-3" type="submit">Sign
+                            in</button>
+                    </li>
+                </ul>
+                <a href="#" class="text-decoration-none text-dark">
+                    <i class="fa-solid fa-bars" style="margin-left: 29px; margin-right: 50px;"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!--SignInForm-->
+    <div id="SignInForm" class="d-none">
+        <div class="d-flex justify-content-center align-items-center min-vh-100 min-vw-100">
+            <div class="card shadow p-4">
+                <form>
+                    <button type="button" class="close position-absolute" style="top: 15px; right: 20px;"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="text-center font-weight-bold">Get Started</h5>
+                    <div class="form-group mt-4">
+                        <button type="button"
+                            class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center"
+                            style="border-radius: 8px;">
+                            <img src="Images/logo3.png" width="20"
+                                class="mr-2 ml-3">
+                            Continue with Google
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button"
+                            class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center"
+                            style="border-radius: 8px;">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Continue with Email
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <button type="button"
+                            class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center"
+                            style="border-radius: 8px;">
+                            <i class="fab fa-apple mr-2"></i>
+                            Continue with Apple
+                        </button>
+                    </div>
+                    <div class="text-center my-2">
+                        <span class="text-muted">OR</span>
+                    </div>
+                    <div class="form-group d-flex align-items-center border-bottom">
+                        <img src="https://flagcdn.com/w40/in.png" width="24" class="mr-2">
+                        <span class="mr-2">+91</span>
+                        <input type="tel" class="form-control border-0 p-0" placeholder="Continue with mobile number">
+                    </div>
+                    <button onclick="CloseForm()" type="button" class="btn btn-block text-white rounded-lg mt-4 bg-secondary">
+                        Continue
+                    </button>
+                    <p class="text-muted text-center mt-3" style="font-size: 12px;">
+                        I agree to the <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Navbar2-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-0">
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto ml-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Stream</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Plays</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sports</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Activities</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                <ul class="navbar-nav mr-auto ml-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">ListYourShow</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Corporates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Gift Cards</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+    </nav>
+
+    <!--Carousel-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary p-2 text-dark bg-opacity-25">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#" class="text-decoration-none">
+                        <img src="Images/img2.png" class="d-block w-100 rounded" alt="picture1">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#" class="text-decoration-none">
+                        <img src="Images/img3.png" class="d-block w-100 rounded" alt="picture2">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#" class="text-decoration-none">
+                        <img src="Images/img4.png" class="d-block w-100 rounded" alt="picture3">
+                    </a>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </nav>
+
+    <!--Movies-->
+    <div class="container-fluid px-5">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+            <h4 class="mb-2 mt-4">Recommended Movies</h4>
+            <a href="#" class="btn btn-outline-danger border-0 btn-sm mt-4">See All</a>
+        </div>
+        <div class="position-relative">
+            <div id="movieSlider" class="d-flex overflow-hidden" style="scroll-behavior: smooth;">
+                <div class="d-flex scroll-bar">
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/mv1.png" class="card-img-top rounded" alt="movie1">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Smurfs</h5>
+                                <p class="card-text">Animation/Family/Fantasy</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/mv2.png" class="card-img-top rounded" alt="movie2">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Tanvi: The Great</h5>
+                                <p class="card-text">Drama</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/mv3.png" class="card-img-top rounded" alt="movie3">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Saiyaara</h5>
+                                <p class="card-text">Drama/Musical/Romantic</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/mv4.png" class="card-img-top rounded" alt="movie4">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Jurassic World: Rebirth</h5>
+                                <p class="card-text">Action/Sci-Fi/Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/mv5.png" class="card-img-top rounded" alt="movie5">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Metro... In Dino</h5>
+                                <p class="card-text">Drama/Romantic</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/m1.png" class="card-img-top rounded" alt="movie6">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Superman</h5>
+                                <p class="card-text">Action/Adventure/Fantasy/Sci-Fi</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/m2.png" class="card-img-top rounded" alt="movie7">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Dear Maa</h5>
+                                <p class="card-text">Drama</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/m3.png" class="card-img-top rounded" alt="movie8">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">I Know What You Did Last Summer</h5>
+                                <p class="card-text">Horror/Mystery/Thriller</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/m4.png" class="card-img-top rounded" alt="movie9">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Maalik</h5>
+                                <p class="card-text">Action/Crime/Drama/Period</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <a href="#" class="text-decoration-none text-dark">
+                            <img src="Images/m5.png" class="card-img-top rounded" alt="movie10">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Sitaare Zameen Par</h5>
+                                <p class="card-text">Comedy/Drama/Sports</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button id="scrollRightBtn" onclick="scrollRight('movieSlider', 'scrollRightBtn', 'scrollLeftBtn')"
+                class="btn btn-dark rounded-circle position-absolute"
+                style="top: 40%; right: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button id="scrollLeftBtn" onclick="scrollToLeft('movieSlider', 'scrollRightBtn', 'scrollLeftBtn')"
+                class="btn btn-dark rounded-circle position-absolute d-none"
+                style="top: 40%; left: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+    </div>
+
+
+    <!--Card1-->
+    <div class="card bg-dark text-white mt-5 mx-5">
+        <a href="https://in.bookmyshow.com/explore/c/stream" class="text-decoration-none">
+            <img src="Images/card1.png" class="card-img rounded" alt="card1">
+        </a>
+    </div>
+
+    <!--Movies2-->
+    <div class="container-fluid px-5 mt-5">
+        <h4 class="mb-2 mt-4">The Best Of Live Events</h4>
+    </div>
+    <div class="card-deck mt-2 px-5">
+        <div class="card border-0">
+            <img src="Images/mv6.png" class="card-img-top rounded" alt="movie6">
+        </div>
+        <div class="card border-0">
+            <img src="Images/mv7.png" class="card-img-top rounded" alt="movie7">
+        </div>
+        <div class="card border-0">
+            <img src="Images/mv8.png" class="card-img-top rounded" alt="movie8">
+        </div>
+        <div class="card border-0">
+            <img src="Images/mv9.png" class="card-img-top rounded" alt="movie9">
+        </div>
+        <div class="card border-0">
+            <img src="Images/mv10.png" class="card-img-top rounded" alt="movie10">
+        </div>
+    </div>
+    </div>
+
+    <!--Movies3-->
+    <div class="bg-premiere mt-5">
+        <div class="container-fluid px-5">
+            <a href="#" class="text-decoration-none">
+                <img src="Images/logo.png" class="card-img ml-n2" alt="card1">
+            </a>
+            <h2 class="mt-3 mb-0">Premieres</h2>
+            <p class="mt-0 mb-2">Brand new releases every Friday</p>
+            <div class="position-relative">
+                <div id="movieSlider2" class="d-flex overflow-hidden" style="scroll-behavior: smooth;">
+                    <div class="d-flex scroll-bar">
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/mv11.png" class="card-img-top rounded" alt="movie11">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Turno Nocturno</h5>
+                                <p class="card-text">Spanish</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/mv12.png" class="card-img-top rounded" alt="movie12">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Paul and Paulette Take a Bath</h5>
+                                <p class="card-text">French</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/mv13.png" class="card-img-top rounded" alt="movie13">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Karate Kid: Legends</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/mv14.png" class="card-img-top rounded" alt="movie14">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Never Alone</h5>
+                                <p class="card-text">Finnish</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/mv15.png" class="card-img-top rounded" alt="movie15">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">The Speedway Murders</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/m11.png" class="card-img-top rounded" alt="movie15">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">The Speedway Murders</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/m12.png" class="card-img-top rounded" alt="movie15">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Winter Spring Summer or Fall</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/m13.png" class="card-img-top rounded" alt="movie15">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Hell of a Summer</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/m14.png" class="card-img-top rounded" alt="movie15">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Good One</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-premiere mr-3 scroller">
+                            <img src="Images/m15.png" class="card-img-top rounded" alt="movie15">
+                            <div class="card-body px-0">
+                                <h5 class="card-title">Red Lorry Film Festival: Take Two - Online</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="scrollRightBtn2" onclick="scrollRight('movieSlider2', 'scrollRightBtn2', 'scrollLeftBtn2')"
+                    class="btn btn-dark rounded-circle position-absolute"
+                    style="top: 40%; right: -20px; transform: translateY(-50%); ">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <button id="scrollLeftBtn2" onclick="scrollToLeft('movieSlider2', 'scrollRightBtn2', 'scrollLeftBtn2')"
+                    class="btn btn-dark rounded-circle position-absolute d-none"
+                    style="top: 40%; left: -20px; transform: translateY(-50%); ">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--Movies4-->
+    <div class="container-fluid px-5">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+            <h4 class="mb-2 mt-5">Your Music Studio</h4>
+            <a href="#" class="btn btn-outline-danger border-0 btn-sm mt-5">See All</a>
+        </div>
+        <div class="position-relative">
+            <div id="movieSlider3" class="d-flex overflow-hidden" style="scroll-behavior: smooth;">
+                <div class="d-flex scroll-bar">
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv16.png" class="card-img-top rounded" alt="movie16">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Jazbaa Ft Mohammed Irfan Live in Concert</h5>
+                            <p class="card-text">Biswa Bangla Convention Centre: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv17.png" class="card-img-top rounded" alt="movie17">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Krishnaa - Music, Bliss and Beyond</h5>
+                            <p class="card-text">Science City Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv18.png" class="card-img-top rounded" alt="movie18">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">McDowell's Soda Yaari Jam ft. Fossils, King,...</h5>
+                            <p class="card-text">Venue To Be Announced: Kolkata Concerts</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv19.png" class="card-img-top rounded" alt="movie19">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Jeevan Ke Har Mod Pe</h5>
+                            <p class="card-text">Nazrul Mancha: Southern Avenue, Kolkata Concerts</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv20.png" class="card-img-top rounded" alt="movie20">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Chiro Kishore</h5>
+                            <p class="card-text">Mahajati Sadan: Kolkata Concerts</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m16.png" class="card-img-top rounded" alt="movie16">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Megher Pore Megh</h5>
+                            <p class="card-text">Madhusudan Mancha: Kolkata Concerts</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m17.png" class="card-img-top rounded" alt="movie17">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Mahesh Kale's Abhangwari - Kolkata</h5>
+                            <p class="card-text">GD Birla Sabhagar: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m18.png" class="card-img-top rounded" alt="movie18">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">30-Ti Bristi</h5>
+                            <p class="card-text">GD Birla Sabhagar: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m19.png" class="card-img-top rounded" alt="movie19">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Maati'r Shure Rabir Imaan</h5>
+                            <p class="card-text">Kala Mandir Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m20.png" class="card-img-top rounded" alt="movie20">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">EKDIN NACHIDIN</h5>
+                            <p class="card-text">Rabindra Bhavan: Konnagar, Hooghly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="scrollRightBtn3" onclick="scrollRight('movieSlider3', 'scrollRightBtn3', 'scrollLeftBtn3')"
+                class="btn btn-dark rounded-circle position-absolute"
+                style="top: 35%; right: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button id="scrollLeftBtn3" onclick="scrollToLeft('movieSlider3', 'scrollRightBtn3', 'scrollLeftBtn3')"
+                class="btn btn-dark rounded-circle position-absolute d-none"
+                style="top: 35%; left: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+    </div>
+
+    <!--Movies5-->
+    <div class="container-fluid px-5">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+            <h4 class="mb-2 mt-5">Laughter Therapy</h4>
+            <a href="#" class="btn btn-outline-danger border-0 btn-sm mt-5">See All</a>
+        </div>
+        <div class="position-relative">
+            <div id="movieSlider4" class="d-flex overflow-hidden" style="scroll-behavior: smooth;">
+                <div class="d-flex scroll-bar">
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv21.png" class="card-img-top rounded" alt="movie21">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Kal Ki Chinta Nahi Karta ft. Ravi Gupta</h5>
+                            <p class="card-text">Dhono Dhanyo Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv22.png" class="card-img-top rounded" alt="movie22">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Young Adult! ft. Gurleen Pannu</h5>
+                            <p class="card-text">Kala Kunj Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv23.png" class="card-img-top rounded" alt="movie23">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">PRACTICE - A Standup Comedy Show by Manik...</h5>
+                            <p class="card-text">Kala Kunj Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv24.png" class="card-img-top rounded" alt="movie24">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Gaurav Gupta Live - India Tour</h5>
+                            <p class="card-text">Kala Mandir Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv25.png" class="card-img-top rounded" alt="movie25">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Daily Ka Kaam Hai By Aakash Gupta - Kolkata</h5>
+                            <p class="card-text">Kala Mandir Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m21.png" class="card-img-top rounded" alt="movie21">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Dhandho by Munawar Faruqui</h5>
+                            <p class="card-text">Kala Kunj Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m22.png" class="card-img-top rounded" alt="movie22">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Halwa by Amit Tandon Kolkata</h5>
+                            <p class="card-text">Kala Mandir Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m23.png" class="card-img-top rounded" alt="movie23">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Halki Halki Fati? By Vikas Kush Sharma</h5>
+                            <p class="card-text">Kala Kunj Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m24.png" class="card-img-top rounded" alt="movie24">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Stand-Up Comedy Open Mic</h5>
+                            <p class="card-text">Mad Bee Comedy Club: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m25.png" class="card-img-top rounded" alt="movie25">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">PS - I Love You By Pranav Sharma</h5>
+                            <p class="card-text">Kala Kunj Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="scrollRightBtn4" onclick="scrollRight('movieSlider4', 'scrollRightBtn4', 'scrollLeftBtn4')"
+                class="btn btn-dark rounded-circle position-absolute"
+                style="top: 35%; right: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button id="scrollLeftBtn4" onclick="scrollToLeft('movieSlider4', 'scrollRightBtn4', 'scrollLeftBtn4')"
+                class="btn btn-dark rounded-circle position-absolute d-none"
+                style="top: 35%; left: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+    </div>
+
+    <!--Movies6-->
+    <div class="container-fluid px-5">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+            <h4 class="mb-2 mt-5">Popular Events</h4>
+            <a href="#" class="btn btn-outline-danger border-0 btn-sm mt-5">See All</a>
+        </div>
+        <div class="position-relative">
+            <div id="movieSlider5" class="d-flex overflow-hidden" style="scroll-behavior: smooth;">
+                <div class="d-flex scroll-bar">
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv26.png" class="card-img-top rounded" alt="movie26">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Krishnaa - Music, Bliss and Beyond</h5>
+                            <p class="card-text">Science City Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv27.png" class="card-img-top rounded" alt="movie27">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Kal Ki Chinta Nahi Karta ft. Ravi Gupta</h5>
+                            <p class="card-text">Dhono Dhanyo Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv28.png" class="card-img-top rounded" alt="movie28">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">DJ Chetas - Chandni Bar Meets Bollywood...</h5>
+                            <p class="card-text">JW Marriott Hotel: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv29.png" class="card-img-top rounded" alt="movie29">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Robi Raag Pothe</h5>
+                            <p class="card-text">GD Birla Sabhaghar: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/mv30.png" class="card-img-top rounded" alt="movie30">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">The Warehouse (Independence Day)</h5>
+                            <p class="card-text">JW Marriott Hotel: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m26.png" class="card-img-top rounded" alt="movie26">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Jazbaa Ft Mohammed Irfan Live in Concert</h5>
+                            <p class="card-text">Biswa Bangla Convention Centre: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m27.png" class="card-img-top rounded" alt="movie27">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Young Adult! ft.Gurleen Pannu</h5>
+                            <p class="card-text">Kala Kunj Auditorium: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m28.png" class="card-img-top rounded" alt="movie28">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Taaruk Raina Live In Kolkata</h5>
+                            <p class="card-text">Refinery 091: Kolkata</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m29.png" class="card-img-top rounded" alt="movie29">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Banglai Kishore O Aska</h5>
+                            <p class="card-text">Rabindra Sadan</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mr-3 scroller">
+                        <img src="Images/m30.png" class="card-img-top rounded" alt="movie30">
+                        <div class="card-body px-0">
+                            <h5 class="card-title">Forever Kishore</h5>
+                            <p class="card-text">Behala Sarat Sadan: Kolkata</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="scrollRightBtn5" onclick="scrollRight('movieSlider5', 'scrollRightBtn5', 'scrollLeftBtn5')"
+                class="btn btn-dark rounded-circle position-absolute"
+                style="top: 35%; right: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button id="scrollLeftBtn5" onclick="scrollToLeft('movieSlider5', 'scrollRightBtn5', 'scrollLeftBtn5')"
+                class="btn btn-dark rounded-circle position-absolute d-none"
+                style="top: 35%; left: -20px; transform: translateY(-50%); ">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </div>
+    </div>
+
+    <!--Buttons-->
+    <div class="container-fluid px-5">
+        <h4 class="font-weight-bold mt-4 mb-3">Trending Searches Right Now</h4>
+        <div class="d-flex flex-wrap mt-4">
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">Saiyaara</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow-sm shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">Metro... In Dino</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow-sm shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">Jurassic World: Rebirth</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow-sm shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">Superman</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow-sm shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">F1: The Movie</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow-sm shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">Sitaare Zameen Par</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow-sm shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">Grihapravesh</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+            <a href="#" class="text-decoration-none">
+                <div class="bg-white rounded shadow-sm shadow border p-3 mr-3 mb-3" style="min-width: 160px;">
+                    <h6 class="text-danger font-weight-bold mb-1">Dhumketu</h6>
+                    <small class="text-muted">Movies</small>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <div class="bg-darkk mt-5 d-none d-md-block">
+        <div class="d-flex justify-content-between align-items-center mb-1 mx-4">
+            <h6 class="mb-3 mt-3 text-white">List your Show Got a show, event, activity or a great experience?
+                Partner
+                with us & get listed on BookMyShow</h6>
+            <a href="#" class="btn btn-danger text-white mt-3 mb-3">Contact Today!</a>
+        </div>
+        <div class="bg-secondaryy text-center py-4">
+            <a href="#" class="text-decoration-none">
+                <div class="row text-light">
+                    <div class="col-md-4 mb-3">
+                        <i class="fa-solid fa-headset fa-2x mb-2"></i>
+                        <div class="small text-white">24/7 CUSTOMER CARE</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <i class="fa-solid fa-ticket fa-2x mb-2"></i>
+                        <div class="small text-white">RESEND BOOKING CONFIRMATION</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <i class="fa-solid fa-envelope-open-text fa-2x mb-2"></i>
+                        <div class="small text-white">SUBSCRIBE TO THE NEWSLETTER</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">MOVIES NOW SHOWING IN KOLKATA</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Superman | Jurassic World: Rebirth | Maalik | Metro... In
+                    Dino |
+                    Sitaare Zameen Par | F1: The Movie | Saiyaara | Aankhon Ki Gustakhiyan | Maa | Grihapravesh
+                </p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">UPCOMING MOVIES IN KOLKATA</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">JSK - Janaki V vs State of Kerala | Indradhanu | Sea of
+                    Love
+                    (Kadalolam Sneham) | Dear Maa | Sant Tukaram | Desai | Smurfs | Tanvi: The Great | Apoorva
+                    Puthranmaar |
+                    Bun Butter Jam</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">MOVIES BY GENRE</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Drama Movies | Thriller Movies | Action Movies | Romantic
+                    Movies |
+                    Fantasy Movies | Period Movies | Sci-Fi Movies | Sports Movies | Crime Movies | Adventure
+                    Movies</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">MOVIES BY LANGUAGE</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Movies in Hindi | Movies in English | Movies in Bengali |
+                    Movies
+                    in Nepali | Movies in Konkani | Movies in Portuguese | Movies in Khasi | Movies in French |
+                    Movies
+                    in
+                    Tulu Movies in Sindhi</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">SPORTS EVENTS IN KOLKATA</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Running | Chess | Cycling | Cricket | Mixed Martial Arts |
+                    Horse
+                    Race
+                    | Shooting | Wrestling | Judo | Boat Race</p>
+            </a>
+
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">EVENTS IN TOP CITIES</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Events in Mumbai | Events in Delhi-NCR | Events in Chennai
+                    |
+                    Events in Bengaluru | Events in Hyderabad | Events in Pune | Events in Ahmedabad | Events in
+                    Kolkata
+                    | Events in
+                    Kochi</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">CINEMAS IN TOP CITIES</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Cinemas in Mumbai | Cinemas in Delhi-NCR | Cinemas in
+                    Chennai |
+                    Cinemas in Bengaluru | Cinemas in Hyderabad | Cinemas in Pune | Cinemas in Ahmedabad |
+                    Cinemas in
+                    Kolkata | Cinemas in Kochi</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">PLAYS IN TOP CITIES</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Plays in Mumbai | Plays in Delhi-NCR | Plays in Chennai |
+                    Plays in
+                    Bengaluru | Plays in Hyderabad | Plays in Pune | Plays in Ahmedabad | Plays in Kolkata |
+                    Plays in
+                    Kochi
+                </p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">ACTIVITIES IN TOP CITIES</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Activities in Mumbai | Activities in Delhi-NCR |
+                    Activities in
+                    Chennai | Activities in Bengaluru | Activities in Hyderabad | Activities in Pune |
+                    Activities in
+                    Ahmedabad |
+                    Activities in Kolkata | Activities in Kochi</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">MOVIES NOW SHOWING</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Superman | Maalik | Metro... In Dino | Jurassic World:
+                    Rebirth |
+                    Sitaare Zameen Par | F1: The Movie | Saiyaara | Oh Bhama Aiyo Rama | Adventure of Jetcat 7D
+                    - Combo
+                    | Maadeva</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">COUNTRIES</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Indonesia | Singapore | Sri Lanka | West Indies</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">HELP</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">About Us | Contact Us | Current Opening | Press Release |
+                    Press
+                    Coverage | Sitemap | FAQs | Terms and Conditions | Privacy Policy</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">BOOKMYSHOW EXCLUSIVES</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Lollapalooza India | BookAChange | Corporate Vouchers |
+                    Gift Cards
+                    |
+                    List My Show |Offers | Stream | Trailers</p>
+            </a>
+        </div>
+        <div class="mx-4 mt-4">
+            <small class="text-white-50 mb-1">HELP</small>
+            <a href="#" class="text-decoration-none text-border-hover">
+                <p class="text-white-50 mt-2 font-xs">Superman | Jurrasic World: Rebirth</p>
+            </a>
+        </div>
+        <div class="d-flex justify-content-between align-items-center bg-darkk text-center py-4">
+            <hr class="border border-white border-1 w-50 mx-4">
+            <a href="#" class="text-decoration-none">
+                <img src="Images/logo2.png" style="width: 150px; height: auto; background-color: transparent;"
+                    class="img-fluid" alt="Logo">
+            </a>
+            <hr class="border border-white border-1 w-50 mx-4">
+        </div>
+        <div class="bg-darkk d-flex justify-content-center gap-3 mt-4 mb-3">
+            <a href="https://www.facebook.com/BookMyShowIN" class="text-decoration-none text-border-hoverr">
+                <i class="fa-brands fa-square-facebook fa-2x text-secondary mr-2"></i>
+            </a>
+            <a href="https://x.com/BookMyShow/" class="text-decoration-none text-border-hoverr">
+                <i class="fa-brands fa-square-twitter fa-2x text-secondary mr-2"></i>
+            </a>
+            <a href="https://www.instagram.com/bookmyshowin/" class="text-decoration-none text-border-hoverr">
+                <i class="fa-brands fa-square-instagram fa-2x text-secondary mr-2"></i>
+            </a>
+            <a href="https://www.youtube.com/user/BookMyShow/featured" class="text-decoration-none text-border-hoverr">
+                <i class="fa-brands fa-square-youtube fa-2x text-secondary mr-2"></i>
+            </a>
+            <a href="https://in.pinterest.com/bookmyshow/" class="text-decoration-none text-border-hoverr">
+                <i class="fa-brands fa-square-pinterest fa-2x text-secondary mr-2"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/bookmyshow/" class="text-decoration-none text-border-hoverr">
+                <i class="fa-brands fa-linkedin fa-2x text-secondary mr-2"></i>
+            </a>
+        </div>
+        <div class="mx-5 py-4">
+            <p class="text-white-50 text-center font-xs mb-0">Copyright 2025 © Bigtree Entertainment Pvt. Ltd.
+                All
+                Rights Reserved.</p>
+            <p class="text-white-50 text-center font-xs">The content and images used on this site are copyright
+                protected and copyrights vests with the respective owners. The usage of the content and images
+                on this
+                website is intended to promote the works and no endorsement of the art shall be implied.
+                Unauthorized
+                use is prohibited and punishable by law.</p>
+        </div>
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    function handleSignInClick() {
+        const click = document.getElementById("SignInForm");
+        click.classList.remove('d-none');
+        click.classList.add("d-flex");
+    }
+
+    function CloseForm() {
+        const touch = document.getElementById("SignInForm");
+        touch.classList.remove("d-flex");
+        touch.classList.add("d-none");
+    }
+
+    function scrollRight(sliderId, rightBtnId, leftBtnId) {
+        const slider = document.getElementById(sliderId);
+        slider.scrollLeft = 1180;
+        document.getElementById(rightBtnId).classList.add('d-none');
+        document.getElementById(leftBtnId).classList.remove('d-none');
+    }
+
+    function scrollToLeft(sliderId, rightBtnId, leftBtnId) {
+        const slider = document.getElementById(sliderId);
+        slider.scrollLeft = 0;
+        document.getElementById(leftBtnId).classList.add('d-none');
+        document.getElementById(rightBtnId).classList.remove('d-none');
+    }
+</script>
+
+</html>
