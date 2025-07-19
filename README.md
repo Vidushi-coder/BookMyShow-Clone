@@ -7,7 +7,7 @@ A fully responsive clone of the BookMyShow website built using **Bootstrap 4**, 
 ## 📸 Preview
 
 ### 🏠 Home Section
-![Home](.Images/Header.png)
+![Home](Images/Header.png)
 
 ---
 
@@ -15,19 +15,19 @@ A fully responsive clone of the BookMyShow website built using **Bootstrap 4**, 
 
 <table>
   <tr>
-    <td><img src=".Images/Card1.png" width="300"/></td>
-    <td><img src=".Images/Card2.png" width="300"/></td>
+    <td><img src="Images/Card1.png" width="300"/></td>
+    <td><img src="Images/Card2.png" width="300"/></td>
   </tr>
   <tr>
-    <td><img src=".Images/Card3.png" width="300"/></td>
-    <td><img src=".Images/Card4.png" width="300"/></td>
+    <td><img src="Images/Card3.png" width="300"/></td>
+    <td><img src="Images/Card4.png" width="300"/></td>
   </tr>
 </table>
 
 ---
 
 ### 🔐 Login Popup
-![Login](.Images/LogIn.png)
+![Login](Images/LogIn.png)
 
 ---
 
@@ -35,8 +35,8 @@ A fully responsive clone of the BookMyShow website built using **Bootstrap 4**, 
 
 <table>
   <tr>
-    <td><img src=".Images/Footer1.png" width="300"/></td>
-    <td><img src=".Images/Footer2.png" width="300"/></td>
+    <td><img src="Images/Footer1.png" width="300"/></td>
+    <td><img src="Images/Footer2.png" width="300"/></td>
   </tr>
 </table>
 
