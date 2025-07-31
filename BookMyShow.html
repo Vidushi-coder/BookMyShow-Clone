@@ -54,6 +54,31 @@
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 1050;
         }
+
+        @media (max-width: 1248px) {
+
+            #scrollRightBtn,
+            #scrollLeftBtn,
+            #scrollRightBtn2,
+            #scrollLeftBtn2,
+            #scrollRightBtn3,
+            #scrollLeftBtn3,
+            #scrollRightBtn4,
+            #scrollLeftBtn4,
+            #scrollRightBtn5,
+            #scrollLeftBtn5 {
+                display: none !important;
+            }
+
+            #movieSlider,
+            #movieSlider2,
+            #movieSlider3,
+            #movieSlider4,
+            #movieSlider5 {
+                overflow-x: auto !important;
+                scroll-behavior: smooth !important;
+            }
+        }
     </style>
 
     <title>Book My Show</title>
@@ -63,8 +88,8 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="Images/img1.png" style="width: 150px; height: auto; margin-left: 10px;"
-                    class="img-fluid" alt="Logo"></a>
+            <a class="navbar-brand" href="#"><img src="Images/img1.png"
+                    style="width: 150px; height: auto; margin-left: 10px;" class="img-fluid" alt="Logo"></a>
             <form class="my-2 my-lg-0 flex-grow-1 me-3">
                 <input class="form-control mr-sm-2 w-100" type="search"
                     placeholder="Search for Movies, Events, Plays, Sports and Activities" aria-label="Search"
@@ -112,8 +137,7 @@
                         <button type="button"
                             class="btn btn-outline-secondary w-100 py-2 d-flex align-items-center justify-content-center"
                             style="border-radius: 8px;">
-                            <img src="Images/logo3.png" width="20"
-                                class="mr-2 ml-3">
+                            <img src="Images/logo3.png" width="20" class="mr-2 ml-3">
                             Continue with Google
                         </button>
                     </div>
@@ -141,7 +165,8 @@
                         <span class="mr-2">+91</span>
                         <input type="tel" class="form-control border-0 p-0" placeholder="Continue with mobile number">
                     </div>
-                    <button onclick="CloseForm()" type="button" class="btn btn-block text-white rounded-lg mt-4 bg-secondary">
+                    <button onclick="CloseForm()" type="button"
+                        class="btn btn-block text-white rounded-lg mt-4 bg-secondary">
                         Continue
                     </button>
                     <p class="text-muted text-center mt-3" style="font-size: 12px;">
