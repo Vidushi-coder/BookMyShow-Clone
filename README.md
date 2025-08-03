@@ -1,6 +1,6 @@
 # 🎬 BookMyShow Clone (Responsive Website)
 
-A fully responsive clone of the BookMyShow website built using **Bootstrap 4**, **HTML5**, **CSS3**, and **JavaScript**. This project recreates the layout and basic interactive features of the original platform, designed to provide a seamless experience across devices.
+A fully responsive clone of the BookMyShow website built using **Bootstrap 3**, **HTML5**, **CSS3**, and **JavaScript**. This project recreates the layout and basic interactive features of the original platform, designed to provide a seamless experience across devices.
 
 ---
 
