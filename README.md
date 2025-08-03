@@ -54,7 +54,7 @@ A fully responsive clone of the BookMyShow website built using **Bootstrap 4**, 
 
 - HTML5 – For structuring the webpage
 - CSS3 – For styling and layout
-- Bootstrap 4 – For responsive design and pre-built components
+- Bootstrap 3 – For responsive design and pre-built components
 - JavaScript – For dynamic behavior and user interactions
 - Font Awesome – For UI icons
 
